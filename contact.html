@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 2rem; background:#f7f7f8; color:#111; }
+    .container { max-width:640px; margin:0 auto; background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 6px 18px rgba(12,20,30,0.06); }
+    label { display:block; margin-top:0.75rem; font-weight:600; }
+    input[type="text"], input[type="email"], textarea {
+      width:100%; padding:0.6rem; margin-top:0.25rem; border:1px solid #dfe3e8; border-radius:6px; box-sizing:border-box;
+    }
+    button { margin-top:1rem; padding:0.6rem 1rem; border:none; background:#0366d6; color:#fff; border-radius:6px; cursor:pointer; }
+    button:active { transform:translateY(1px); }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Contact Us</h1>
+    <p>If you have questions, feedback, or want to get in touch, please fill out the form below.</p>
+
+    <form id="contactForm" action="#" method="post">
+      <label for="name">Name
+        <input id="name" name="name" type="text" required placeholder="Your full name" />
+      </label>
+
+      <label for="email">Email
+        <input id="email" name="email" type="email" required placeholder="you@example.com" />
+      </label>
+
+      <label for="subject">Subject
+        <input id="subject" name="subject" type="text" placeholder="Subject" />
+      </label>
+
+      <label for="message">Message
+        <textarea id="message" name="message" rows="6" required placeholder="Write your message here..."></textarea>
+      </label>
+
+      <button type="submit">Send message</button>
+    </form>
+  </main>
+
+  <script>
+    // Simple client-side handling to prevent default navigation when action is '#'
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      if (this.action === '#') {
+        e.preventDefault();
+        alert('Thank you — your message was submitted (demo).');
+      }
+    });
+  </script>
+</body>
+</html>
